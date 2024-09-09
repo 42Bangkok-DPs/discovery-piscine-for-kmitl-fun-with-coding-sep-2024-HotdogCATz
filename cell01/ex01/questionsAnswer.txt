@@ -1,0 +1,7 @@
+What is HTML? and what does HTML used for?:
+HTML: HyperText Markup Language ภาษาที่ใช้สร้างหน้าเว็บ
+
+What is a html element?:
+องค์ประกอบใน HTML (อาจเรียกว่า tag) <a>, <p>, <img>
+
+
