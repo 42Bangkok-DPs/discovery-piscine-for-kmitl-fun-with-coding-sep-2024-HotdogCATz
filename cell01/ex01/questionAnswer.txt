@@ -1,0 +1,3 @@
+Explain how to make the letter bigger and center:
+ใช้ tag h1 ขยายข้อความ
+แล้วใช้ inline css text-align: center กำหนดตำแหน่ง
