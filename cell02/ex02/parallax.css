@@ -1,0 +1,36 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.parallax {
+    height: 900px;
+
+    background-attachment: fixed;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.img1 {
+    background-image: url('https://cdn.britannica.com/19/213119-050-C81C786D/Grumpy-Cat-2015-memes.jpg');
+}
+
+.img2 {
+    background-image: url('https://imgflip.com/s/meme/Smiling-Cat.jpg');
+}
+
+.parallax-text {
+    text-align: center;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    background-color: rgb(0, 0, 0);
+}
