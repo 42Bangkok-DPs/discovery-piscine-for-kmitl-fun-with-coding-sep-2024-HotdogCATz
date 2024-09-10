@@ -1,15 +1,24 @@
 body {
     display: flex;
     justify-content: center; 
-    align-items: center;     
     height: 100vh;
     font-family: monospace;      
 }
-h1 {
+.DropDownBtn {
+    border: 1px solid #00bae9;
+    border-radius: 20px;
+    width: 250px;
+    height: 60px;
+    margin-top: 10vh;
+}
+
+.DropDownBtn p{
     text-align: center;
+    font-size: large;
 }
 
 .DropDownList {
+    display: none;
     width: 250px;
     border: 1px solid #00728f;
     border-radius: 15px;
@@ -24,7 +33,10 @@ nav a{
 }
 
 nav a:hover{
-    background: #2dceff;
+    background: #00bae9;
     cursor: pointer;
 }
 
+nav:focus-within .DropDownList {
+    display: block;
+}
