@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;
+    font-family: monospace;      
+}
+h1 {
+    text-align: center;
+}
+
+.DropDownList {
+    width: 250px;
+    border: 1px solid #00728f;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+nav a{
+    display: block;
+    border: 1px solid #00728f;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a:hover{
+    background: #2dceff;
+    cursor: pointer;
+}
+
