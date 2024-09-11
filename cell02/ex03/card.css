@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: monospace;
+    background-color: #f4f4f4;
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    border-radius: 8px;
+}
+
+button {
+    border-radius: 8px;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    margin: 20px;
+}
+
+.profile-card .profile-img {
+    width: 100%;
+    height: auto;
+}
+
+.profile-card h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.profile-card .title {
+    color: grey;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.profile-card p {
+    margin: 0 0 10px;
+}
+
+.profile-card .social-links {
+    margin: 20px 0;
+}
+
+.profile-card .social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.profile-card button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-card button:hover {
+    background-color: #555;
+}
