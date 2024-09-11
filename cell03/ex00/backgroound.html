@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+    <div>
+        <button id="colorButton">Click me!</button>
+    </div>
+
+    <script>
+        document.getElementById("colorButton").addEventListener("click", function() {
+            const randomColor = '#' + Math.floor(Math.random() * (256 * 256 * 256)).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>
