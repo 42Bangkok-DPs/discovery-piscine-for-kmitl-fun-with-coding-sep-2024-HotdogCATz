@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: monospace;
+                background-color: #f4f4f4;
+                margin: 0;
+                text-align: center;
+            }
+
+            #balloon {
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+                background-color: red;
+            }
+
+            #sizeDisplay {
+                margin-left: 20px;
+                margin-top: 20px;
+                font-size: 24px;
+                font-weight: bold;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div id="balloon"></div>
+        <div id="sizeDisplay">Current Size: 200px</div>
+
+        <script>
+            $(document).ready(function () {
+                const balloon = $('#balloon');
+                const sizeDisplay = $('#sizeDisplay');
+
+                let size = 200;
+                let colors = ['red', 'green', 'blue'];
+                let curColor = 0;
+
+                function updateSizeDisplay() {
+                    sizeDisplay.text(`Current Size: ${size}px`);
+                }
+
+                balloon.on('click', function () {
+                    if (size < 420) {
+                        size += 10;
+                        curColor = (curColor + 1) % colors.length;
+                    } else {
+                        size = 200;
+                        curColor = 0;
+                    }
+                    balloon.css({
+                        'width': size + 'px',
+                        'height': size + 'px',
+                        'background-color': colors[curColor]
+                    });
+                    updateSizeDisplay();
+                });
+                
+                balloon.on('mouseleave', function () {
+                    if (size > 200) {
+                        size -= 5;
+                        curColor = (curColor - 1 + colors.length) % colors.length;
+                    }
+                    balloon.css({
+                        'width': size + 'px',
+                        'height': size + 'px',
+                        'background-color': colors[curColor]
+                    });
+                    updateSizeDisplay();
+                });
+            });
+        </script>
+    </body>
+</html>

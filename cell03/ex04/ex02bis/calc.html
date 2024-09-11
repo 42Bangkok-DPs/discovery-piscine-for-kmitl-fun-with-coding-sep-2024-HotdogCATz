@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic Calculator</title>
+        <style>
+            body {
+                font-family: monospace;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+
+            .calculator {
+                display: flex;
+                gap: 8px;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            input,
+            select {
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                width: 100%;
+            }
+
+            input[type="submit"] {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+            #operator {
+                width: 120px;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1>Basic Calculator</h1>
+            <div class="calculator">
+                <input type="number" id="leftNumber" placeholder="Left member" min="0">
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+                <input type="number" id="rightNumber" placeholder="Right member" min="0">
+                <input type="submit" id="calculateButton" value="Try me!">
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#calculateButton').on('click', function () {
+                    const leftNumber = parseInt($('#leftNumber').val());
+                    const operator = $('#operator').val();
+                    const rightNumber = parseInt($('#rightNumber').val());
+
+                    if (isNaN(leftNumber) || isNaN(rightNumber) || leftNumber < 0 || rightNumber < 0) {
+                        alert('Error :(');
+                        return;
+                    }
+
+                    let result;
+                    switch (operator) {
+                        case '+':
+                            result = leftNumber + rightNumber;
+                            break;
+                        case '-':
+                            result = leftNumber - rightNumber;
+                            break;
+                        case '*':
+                            result = leftNumber * rightNumber;
+                            break;
+                        case '/':
+                            if (rightNumber === 0) {
+                                alert("It's over 9000!");
+                                return;
+                            }
+                            result = leftNumber / rightNumber;
+                            break;
+                        case '%':
+                            if (rightNumber === 0) {
+                                alert("It's over 9000!");
+                                return;
+                            }
+                            result = leftNumber % rightNumber;
+                            break;
+                    }
+
+                    alert(`Result: ${result}`);
+                    console.log(`Result: ${result}`);
+                });
+
+                setInterval(function () {
+                    alert('Please, use me...');
+                }, 30000);
+            });
+        </script>
+    </body>
+</html>
