@@ -12,7 +12,7 @@ $(document).ready(function () {
             addTask(task);
             saveTasks();
         } else {
-            alert("Task name must not be empty 🫵😠");
+            alert("Task name must not be empty");
         }
     });
 
@@ -40,16 +40,22 @@ $(document).ready(function () {
         $('.task').each(function () {
             tasks.push($(this).text());
         });
-        document.cookie = `tasks=${JSON.stringify(tasks)}; path=/`;
+        document.cookie = `tasks=${encodeURIComponent(JSON.stringify(tasks))}; path=/`;
     }
 
     // Load tasks from cookies
     function loadTasks() {
         const cookies = document.cookie.split('; ');
-        const tasksCookie = cookies.find(cookie => cookie.startsWith('tasks='));
+        const tasksCookie = cookies.find(cookie => cookie.trim().startsWith('tasks='));
         if (tasksCookie) {
-            const tasks = JSON.parse(tasksCookie.split('=')[1]);
-            tasks.forEach(task => addTask(task));
+            try {
+                const tasks = JSON.parse(decodeURIComponent(tasksCookie.split('=')[1]));
+                tasks.forEach(task => addTask(task));
+            } catch (e) {
+                console.error("Error", e);
+                alert("Error loading tasks.");
+                document.cookie = "tasks=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
         }
     }
 });
