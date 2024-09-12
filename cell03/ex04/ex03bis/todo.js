@@ -6,7 +6,7 @@ $(document).ready(function () {
     loadTasks();
 
     // Create new task
-    $newTaskBtn.on('click', function () {
+    $newTaskBtn.click(function () {
         const task = prompt("Enter a new TO DO:");
         if (task) {
             addTask(task);
@@ -19,7 +19,7 @@ $(document).ready(function () {
     // Add task to list
     function addTask(taskText) {
         const $taskDiv = $('<div class="task"></div>').text(taskText);
-        $taskDiv.on('click', function () {
+        $taskDiv.click(function () {
             removeTask($taskDiv);
         });
         $ftList.append($taskDiv);
