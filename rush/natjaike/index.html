@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-container">
+  <div class="tab-container">
+    <div class="tab-bar">
+      <button class="tab-button active" onclick="openTab(event, 'Profile')">Profile</button>
+      <button class="tab-button" onclick="openTab(event, 'Education')">Education</button>
+      <button class="tab-button" onclick="openTab(event, 'Settings')">Contact</button>
+    </div>
+
+    <div id="Profile" class="tab-content active">
+
+      <h1>Nattahpon Jaikeaw</h1>
+      <center>
+        <img src="cat.jpg" width="400" height="400">
+      </center>
+      <h2>about me</h2>
+      <p>My motivated Computer Science student with a keen interest in web development, data analysis and AI, seeking an internship or part-time opportunity to gain practical experience and further develop technical skills.</p>
+      <p>I am a highly motivated and dedicated professional with a strong foundation in both academic knowledge and practical experience in (mention your field or profession). Over the course of my studies and work, I have developed key skills in problem-solving, analytical thinking, and effective teamwork. My participation in various projects has also honed my abilities in communication, time management, and collaboration, allowing me to work efficiently with cross-functional teams. Additionally, I have a keen interest in leveraging modern technologies and innovative approaches to improve processes and achieve optimal outcomes for the organizations I work with.
+
+        I am passionate about advancing my career in computer and am eager to contribute my skills and knowledge to a forward-thinking organization. I am looking for opportunities where I can apply my expertise while continuously learning from industry experts and real-world experiences, helping the organization grow and achieve its goals in the long term.</p>
+    </div>
+
+    <div id="Education" class="tab-content">
+        <h1>Education</h1>
+        <h2>king mongkut's institute of technology ladkrabang</h2>
+        <p>Bachelor of Science in Computer Science</p>
+        <p>2021-to present</p>
+        <ul>
+            <li>Relevant Coursework: Data Structures, Algorithms, Web Development, AI</li>
+        </ul>
+    
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> Python, Java,</li>
+            <li><strong>Tools & Technologies:</strong> Git, VSCode</li>
+            <li><strong>Databases:</strong> MySQL,MongoDB</li>
+            <li><strong>Other Skills:</strong>Problem-solving, teamwork, project management</li>
+        </ul>    
+    </div>
+
+    <div id="Settings" class="tab-content">
+      <h1>Contact</h1>
+      <p>rookboss69@gmail.com.</p>
+      <p>tel-061-821-8924</p>
+      <a href="https://www.linkedin.com/in/nattahpon-jaikeaw-a81645328/">
+        <img src="linked.jpg" width="50" height="50" style="margin: 35px 35px 35px 35px;">
+      </a>
+      <a href="https://github.com/ROOKBOSS">
+        <img src="github.jpg" width="50" height="50" style="margin: 35px 35px 35px 35px;">
+      </a>
+      <a href="https://www.instagram.com/13e12ig/">
+        <img src="instagram2.jpg" width="50" height="50" style="margin: 35px 35px 35px 35px;">
+      </a>
+    </div>
+  </div>
+  </div>
+  <script>
+    function openTab(evt, tabName) {
+      var tabContent = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+        tabContent[i].classList.remove("active");
+      }
+      var tabButtons = document.getElementsByClassName("tab-button");
+      for (var i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+      }
+      document.getElementById(tabName).style.display = "block";
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("Home").style.display = "block";
+    });
+  </script>
+
+
+</body>
+</html>
