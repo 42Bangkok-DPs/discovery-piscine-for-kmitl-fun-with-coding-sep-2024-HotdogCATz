@@ -73,3 +73,8 @@ body {
     background-color: #4a4ab3;
 }
 
+@media (max-width: 800px) {
+    .hero {
+        width: 90%;
+    }
+}

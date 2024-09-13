@@ -21,3 +21,8 @@ function copyToClipboard() {
     // Optional: Show a message to the user
     alert('Email copied to clipboard!');
 }
+
+function toggleNavbar() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('active');
+}
