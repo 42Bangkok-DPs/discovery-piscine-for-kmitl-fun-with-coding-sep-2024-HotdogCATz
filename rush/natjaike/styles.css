@@ -1,57 +1,481 @@
-/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
 body {
-  font-family: sans-serif, monospace;
-  background-image: url("background.jpg");
-  margin: 0;
-  padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #404040, #343434, #282828, #1d1d1d, #111111);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
 }
 
-.tab-container {
-  width: 90%;
-  min-height: 600px;
-  margin: 50px auto;
-  background-color: #ffffff;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+.navbar {
+    background-color: #404040;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0.8;
 }
 
-.tab-bar {
-  display: flex;
-  border-bottom: 2px solid #eee;
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
 }
 
-.tab-button {
-  flex: 1;
-  padding: 10px;
-  cursor: pointer;
-  background-color: #f4f4f4;
-  border: none;
-  outline: none;
-  transition: background-color 0.3s ease;
-  font-size: 16px;
+.navbar a:hover {
+    text-decoration: underline;
 }
 
-.tab-button:hover {
-  background-color: #ddd;
+.navbar .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.tab-button.active {
-  background-color: #fff;
-  border-bottom: 2px solid #007bff;
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        visibility: hidden;
+        width: 100%;
+        height: 10px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu.active {
+        visibility: visible;
+        height: auto;
+        margin-left: 1em;
+    }
+    
+    .menu.active a{
+        margin-top: 1em;
+        padding: 8px;
+        width: 100%;
+        height: 24px;
+    }
+
+    .menu.active a:hover{
+        background: #5a5a5a;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a.toggle-btn {
+        display: block;
+    }
 }
 
-.tab-content {
-  display: none;
-  padding: 20px 0;
+.toggle-btn {
+    display: none;
+    cursor: pointer;
 }
 
-.tab-content.active {
-  display: block;
+#profileContainer {
+    width: 80%;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    margin-top: 6em;
 }
-.background-container {
-  background-image: url("background.jpg");
-  height: 100vh;
-  display: flex;
-  position: relative;
-  backdrop-filter: blur(10px);
+
+.content {
+    flex: 1;
+    max-width: 600px;
+    padding-left: 4em;
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #595959;
+}
+
+.content h1 {
+    font-size: 48px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cta-buttons {
+    display: flex;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #404040;
+    margin-right: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn.secondary {
+    background-color: #8C8C8C;
+}
+
+.btn:hover {
+    background-color: #292929;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.aboutMeContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    width: 80%;
+}
+
+.headerSectionText{
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 1em;
+}
+
+.aboutMeContainer .talent p{
+    text-align: center;
+    color: #404040;
+    font-weight: 600;
+    padding-top: 1em;
+}
+
+.aboutMeContainer .talent{
+    width: 60%;
+    min-height: 380px;
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    padding-left: 2em;
+    padding-bottom: 2em;
+}
+
+.aboutMeContainer .talent .iconList{
+    border-radius: 4px;
+    margin-top: 1em;
+    
+}
+
+.aboutMeContainer .talent .iconList img{
+    border-radius: 4px;
+    margin-right: 1em;
+    margin-top: 4px;
+    height: 44px;
+}
+
+.aboutMeContainer .description{
+    color: #595959;
+    width: 40%;
+    min-height: 380px;
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    padding: 2em;
+}
+
+#experiences {
+    width: 80%;
+    min-height: 380px;
+    background-color: #fcfcfc;
+    border-radius: 25px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+#experiences .experienceItem{
+    width: 80%;
+    min-height: 160px;
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    border: 1px solid #dddddd;
+    padding: 1em;
+    padding-left: 2em;
+    display: flex;
+}
+
+#experiences .experienceItem .textContain{
+    padding-left: 2em;
+}
+
+#experiences .experienceItem p{
+    color: #404040;
+    font-weight: bold;
+    padding-top: 1em;
+    margin-bottom: 1em;
+}
+
+#experiences .experienceItem span{
+    color: #595959;
+}
+
+#experiences .experienceItem .itemImage{
+    height: 90%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#experiences .experienceItem .itemImage img{
+    height: 120px;
+    width: 120px;
+    border-radius: 8px;
+}
+
+#contact {
+    width: 80%;
+    min-height: 280px;
+    background-color: #fcfcfc;
+    border-radius: 25px;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+#contact .contactItem {
+    min-width: 200px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #dddddd;
+    padding-left: 1em;
+    display: flex;
+    overflow: hidden;
+    gap: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#contact .contactItem .itemImage{
+    display: flex;
+    align-items: center;
+}
+
+#contact .contactItem .textItem{
+    color: #404040;
+    align-self: center;
+    padding-right: 2em;
+    cursor: context-menu;
+}
+
+#contact .contactItem .itemLink a{
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+}
+
+#contact .contactItem .itemLink .copy{
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+}
+
+#contact .contactItem .itemLink a:hover{
+    opacity: 0.6;
+}
+
+footer {
+    margin-top: 4em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    #profileContainer {
+        width: 80%;
+        border: 2px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        padding: 50px;
+        background-color: #f4f4f4;
+        border-radius: 25px;
+    }
+
+    .content {
+        flex: 1;
+        max-width: 600px;
+        padding-left: 0em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2em;
+    }
+
+    .aboutMeContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 12px;
+        width: 80%;
+    }
+    
+    .aboutMeContainer .talent{
+        width: 100%;
+        min-height: 380px;
+        background-color: #f4f4f4;
+        border-radius: 25px;
+        padding-left: 2em;
+        padding-bottom: 2em;
+    }
+
+    .aboutMeContainer .description{
+        color: #595959;
+        width: 100%;
+        min-height: 380px;
+        background-color: #f4f4f4;
+        border-radius: 25px;
+        padding: 2em;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #profileContainer {
+        width: 80%;
+        border: 2px solid #333;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        padding: 50px;
+        background-color: #f4f4f4;
+        border-radius: 25px;
+    }
+
+    .content {
+        flex: 1;
+        max-width: 600px;
+        padding-left: 0em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2em;
+    }
+
+    .aboutMeContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 12px;
+        width: 80%;
+    }
+    
+    .aboutMeContainer .talent{
+        width: 100%;
+        min-height: 380px;
+        background-color: #f4f4f4;
+        border-radius: 25px;
+        padding-left: 2em;
+        padding-bottom: 2em;
+    }
+
+    .aboutMeContainer .description{
+        color: #595959;
+        width: 100%;
+        min-height: 380px;
+        background-color: #f4f4f4;
+        border-radius: 25px;
+        padding: 2em;
+    }
+
+    #experiences {
+        width: 80%;
+        min-height: 380px;
+        background-color: #fcfcfc;
+        border-radius: 25px;
+        padding: 2em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+
+    #experiences .experienceItem{
+        width: 80%;
+        min-height: 160px;
+        background-color: #f4f4f4;
+        border-radius: 15px;
+        border: 1px solid #dddddd;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;        
+        align-items: center;
+    }
+    
+    #experiences .experienceItem .textContain{
+        padding-left: 0em;
+    }
+
+    #experiences .experienceItem .textContain p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contact {
+        width: 80%;
+        min-height: 280px;
+        background-color: #fcfcfc;
+        border-radius: 25px;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+    }
 }
