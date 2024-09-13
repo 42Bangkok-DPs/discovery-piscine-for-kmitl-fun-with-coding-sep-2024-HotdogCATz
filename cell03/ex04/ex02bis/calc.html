@@ -77,6 +77,7 @@
         
                     if (leftNumber < 0 || rightNumber < 0) {
                         alert('Error: Numbers must be positive.');
+                        
                         return;
                     }
         
@@ -94,6 +95,7 @@
                         case '/':
                             if (rightNumber === 0) {
                                 alert("It's over 9000!");
+                                console.log("It's over 9000!");
                                 return;
                             }
                             result = leftNumber / rightNumber;
@@ -101,12 +103,13 @@
                         case '%':
                             if (rightNumber === 0) {
                                 alert("It's over 9000!");
+                                console.log("It's over 9000!");
                                 return;
                             }
                             result = leftNumber % rightNumber;
                             break;
                     }
-        
+
                     alert(`Result: ${result}`);
                     console.log(`Result: ${result}`);
                 });
